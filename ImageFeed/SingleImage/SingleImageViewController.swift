@@ -16,6 +16,14 @@ final class SingleImageViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
+    @IBAction func didTapToShare(_ sender: UIButton) {
+        let share = UIActivityViewController(
+            activityItems: [image as Any],
+            applicationActivities: nil
+        )
+        present(share, animated: true, completion: nil)
+    }
+    
     @IBAction func didTapBackButton(_ sender: Any) {
         dismiss(animated: true)
     }
