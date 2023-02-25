@@ -8,15 +8,21 @@
 import UIKit
 
 final class SingleImageViewController: UIViewController {
-    
-    
        
    // MARK: - IB's
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     
-    @IBAction func didTapBackButton(_ sender: Any) {
+    @IBAction private func didTapToShare(_ sender: UIButton) {
+        let share = UIActivityViewController(
+            activityItems: [image as Any],
+            applicationActivities: nil
+        )
+        present(share, animated: true, completion: nil)
+    }
+    
+    @IBAction private func didTapBackButton(_ sender: Any) {
         dismiss(animated: true)
     }
     
